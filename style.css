@@ -268,6 +268,17 @@ button:hover {
   transform: translateY(0) translateX(0);
   pointer-events: auto;
 }
+
+.contact-panel .contact-header .close-btn {
+  position: absolute;
+  top: 8px;
+  right: 10px;
+  background: transparent;
+  border: none;
+  color: #cbd5f5;
+  font-size: 16px;
+  cursor: pointer;
+}
 /* ==================== INVITE MESSAGE LINK ==================== */
 
 .invite-msg a {

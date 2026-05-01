@@ -73,6 +73,37 @@ body {
   box-shadow: 0 0 20px rgba(59, 130, 246, 0.5);
 }
 
+.marquee-container {
+  width: 100%;
+  background: rgba(15, 23, 42, 0.9); /* Professional deep navy/charcoal */
+  color: #ffffff;
+  padding: 10px 0;
+  overflow: hidden;
+  white-space: nowrap;
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 500;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(5px); /* Keeps the glassmorphism theme consistent */
+}
+
+.marquee-content {
+  display: inline-block;
+  padding-left: 100%;
+  animation: marquee-animation 25s linear infinite;
+}
+
+@keyframes marquee-animation {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-100%); }
+}
+
+/* Pause marquee on hover so users can read specific updates */
+.marquee-container:hover .marquee-content {
+  animation-play-state: paused;
+  cursor: default;
+}
+
 /* Main Container */
 .main-container {
   flex: 1;
@@ -259,21 +290,41 @@ body {
   border: 1px solid rgba(255,255,255,0.12);
 }
 
-/* Sticky Footer */
+/* Footer */
 .footer {
-  margin-top: auto;
-  width: 100%;
-  background: rgba(255,255,255,0.06);
+  position: fixed;
+  bottom: 15px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90%;
+  max-width: 900px;
+  background: rgba(255,255,255,0.05);
   backdrop-filter: blur(12px);
-  border-top: 1px solid rgba(255,255,255,0.15);
-  padding: 25px 5%;
-  text-align: center;
-  font-size: 0.95rem;
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 12px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.4), 0 0 20px rgba(59,130,246,0.15);
+  padding: 12px 20px;
+  font-size: 13px;
   color: #cbd5f5;
 }
 
-.footer:hover {
-  background: rgba(255,255,255,0.1);
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  cursor: pointer;
+  align-items: center;
+  gap: 10px;
+}
+
+.footer a {
+  color: #cbd5f5;
+  text-decoration: none;
+  margin-left: 12px;
+  transition: 0.3s;
+}
+
+.footer a:hover {
+  color: #3b82f6;
 }
 
 /* Animation */
